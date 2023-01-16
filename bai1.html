@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bai1</title>
+  </head>
+  <body>
+    <script>
+      let input1 = Math.floor(prompt("Nhập số thứ nhất"));
+      let input2 = Math.floor(prompt("Nhập số thứ hai"));
+
+      function checkNum(num) {
+        var flag = true;
+        for (let i = 2; i < num; i++) {
+          if (num % i == 0) {
+            flag = false;
+          } else if (num < 2) {
+            flag = false;
+          }
+        }
+        if (flag == true) {
+          return num;
+        }
+      }
+      let total = 0;
+      if (isNaN(input1) || isNaN(input2) || input1 > input2) {
+        alert("Vui lòng nhập lại");
+      } else {
+        document.write("Các số nguyên tố:");
+        for (let i = input1 + 1; i < input2; i++) {
+          let getNum = checkNum(i);
+          if (!isNaN(getNum) && getNum > 2) {
+            document.write(getNum, ",");
+            total += getNum;
+          }
+        }
+        document.write("Tổng các số nguyên tố:", total);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .header {
+        margin: 100px;
+      }
+
+      .header-items {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 44px;
+      }
+
+      .header-search input {
+        border: none;
+        padding: 16px;
+        padding-left: 30px;
+        margin: 5px;
+      }
+      .header-search i {
+        position: absolute;
+        font-size: 18px;
+        top: 18px;
+        left: 10px;
+      }
+      .header-search {
+        width: 10px;
+        height: 10px;
+        position: relative;
+        font-size: 16px;
+      }
+      .header-option {
+        display: flex;
+        position: relative;
+        bottom: 15px;
+        padding: 16px;
+      }
+
+      .header-option div {
+        margin-left: 30px;
+        font-size: 16px;
+        cursor: pointer;
+        padding: 16px;
+      }
+      .header-option div:hover {
+        background: #849fff;
+        border-radius: 8px;
+        color: #ffffff;
+      }
+      .container {
+        margin: 70px 100px;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+        width: fit-content;
+      }
+
+      .container-items {
+        margin: 0 16px 16px 0;
+        width: 327px;
+        height: 208px;
+        display: flex;
+        background: #fbfcff;
+        border: 1px solid #bfc8e6;
+        box-shadow: 0px 8px 23px rgba(218, 224, 249, 0.7);
+        border-radius: 16px;
+      }
+      .container-items:hover {
+        transform: scale(1.05);
+      }
+      .container-items img {
+        width: 97px;
+        height: 97px;
+        margin: 24px 16px 87px 24px;
+      }
+      .container-items_info {
+        margin: 24px 65px 78px 16px;
+        padding-bottom: 4px;
+      }
+
+      .container-items_info p {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 21px;
+        padding-bottom: 16px;
+      }
+
+      .container-items_info h3 {
+        font-family: "Merriweather";
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 23px;
+      }
+      .container-items_info span {
+        width: fit-content;
+        height: 22px;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 18px;
+        color: #516fd4;
+        border: 1px solid #bfc8e6;
+        border-radius: 10px;
+        padding: 2px 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Users</h1>
+      <div class="header-items">
+        <span class="header-search">
+          <i class="fa-sharp fa-solid fa-magnifying-glass"></i
+          ><input type="text" placeholder="Search users" />
+        </span>
+        <div class="header-option">
+          <div id="header-option1">Reputation</div>
+          <div>New users</div>
+          <div>Voters</div>
+          <div>Editors</div>
+          <div>Moderators</div>
+        </div>
+      </div>
+    </div>
+    <div class="container"></div>
+    <script>
+      let listUsers = [
+        {
+          name: "Lelah Nichols",
+          imgUrl: "img/1.png",
+          address: "Troy, MI",
+          style1: "clothes",
+          style2: "stem",
+        },
+        {
+          name: "Jesus Weiss",
+          imgUrl: "img/2.png",
+          address: "Fort Worth, TX",
+          style1: "headset",
+          style2: "gadget",
+        },
+        {
+          name: "Annie Rice",
+          imgUrl: "img/3.png",
+          address: "Austin, TX",
+          style1: "road",
+          style2: "mountain",
+        },
+        {
+          name: "Robert Brower",
+          imgUrl: "img/4.png",
+          address: "Cincinnati, OH",
+          style1: "Maintenance",
+          style2: "gears",
+        },
+        {
+          name: "Amy Campbell",
+          imgUrl: "img/5.png",
+          address: "Warrior, AL",
+          style1: "music",
+          style2: "disks",
+        },
+        {
+          name: "Anthony S. Morin",
+          imgUrl: "img/6.png",
+          address: "Lyndhurst, NJ",
+          style1: "vintage",
+          style2: "electric",
+        },
+      ];
+
+      let getList = document.getElementsByClassName("container");
+      let newlistUser = "";
+      for (i = 0; i < listUsers.length; i++) {
+        newlistUser += `<div class="container-items">
+        <img src="${listUsers[i].imgUrl}" alt="img" />
+        <div class="container-items_info">
+        <h4>${listUsers[i].name}</h4>
+        <p>${listUsers[i].address}</p>
+        <span>${listUsers[i].style1}</span>
+        <span>${listUsers[i].style2}</span>
+        </div>
+      </div>
+        `;
+      }
+      getList[0].innerHTML = newlistUser;
+    </script>
+  </body>
+</html>
